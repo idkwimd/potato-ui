@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-r></div>
+
+    <script type="module">
+        // Load modules
+        // ==============================================
+        //
+        import Router from './core/Router.js'
+        import ComponentBase from './core/ComponentBase.js'
+
+        // Globalize common variables
+        // ==============================================
+        //
+        window.$ComponentBase = ComponentBase
+
+        // Initialize app
+        // ==============================================
+        //
+        ;(async () => {
+
+            const router = new Router([
+                { path: '/', view: 'app' },
+                { path: '/about', view: 'app/about' }
+            ])
+            
+            await router.init()
+
+        })()
+    </script>
+</body>
+</html>
